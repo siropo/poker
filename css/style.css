@@ -1,0 +1,404 @@
+﻿ /* 
+Description: 
+Author: Viktor Ivanov
+*/ 
+
+/*#header, #wrapper-content, #content, #sidebar, #footer {
+	border: 1px solid #DCDCD0;
+	height: 200px;
+}
+*/	
+/*************************************************************	
+Reset  																						
+************************************************************/ 
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, 
+tfoot, thead, tr, th, td, article, aside, footer, header, hgroup, nav, section {
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+img {
+    border: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+	a:hover {
+		text-decoration: none;
+	}
+	
+/*************************************************************	
+Globals  																						
+************************************************************/
+@font-face {  
+  font-family: gamefont;  
+  src: url("fonts/Halo11.ttf") format("truetype");  
+} 
+
+body
+{
+    background: #fff url(images/some-img.png) repeat-x top left;
+    font: normal normal 62.5% gamefont, Verdana, helvetica, sans-serif;
+    line-height: 1;
+    color: #000;
+}
+
+#wrapper-site
+{
+    position: relative;
+    margin: 0 auto 10px auto;
+    width: 960px;
+	height: 500px;
+    background: #efeff1;
+	font-size: 1.5em;
+}
+
+/*************************************************************	
+Custom  																						
+************************************************************/
+
+.clear:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+/*************************************************************	
+header        																						
+************************************************************/
+
+#header {
+	padding-top: 20px;
+}
+
+/* board controls */
+
+.board {
+	padding-top: 10px;
+	margin-left: 10px;
+}
+
+.credit {
+	width: 200px;
+	font-size: 1.3em;
+}
+
+.credit span {
+	display: block;
+}
+
+.credit-value {
+	
+}
+
+#enter-credit {
+	width: 60px;
+}
+
+.gain {
+	width: 150px;
+}
+
+.btn-hold {
+
+}
+
+.gain-chip {
+	margin-right: 200px;
+}
+
+/*************************************************************	
+main - menu 																		
+************************************************************/
+
+#main-navi {
+    background: #fff url(images/some-img.png) repeat-x;
+}
+
+	#main-navi li {
+		margin: 10px;
+		padding: 10px;
+		float: left;
+	}
+
+/*************************************************************	
+Content        																						
+************************************************************/
+
+#wrapper-content {
+    
+}
+
+/*************************************************************	
+main-content												*/
+
+#content {
+	width: 640px;
+	float: left;
+}
+
+.card-hold {
+	margin: 10px auto;
+	width: 550px;
+}
+
+/* buttons */
+
+.play-btn {
+	width: 100px;
+	margin: 2px 0;
+	padding: 10px;
+	display: block;
+	border: 1px solid gray;
+}
+
+/* show image */
+
+.show-card {
+	position: relative;
+	width: 72px;
+	height: 97px;
+	margin: 0 10px;
+	float: left;
+	overflow: hidden;
+	border: 2px solid transparent;
+	
+}
+
+.first-card.big-or-small {
+	margin-left: 10px;
+}
+
+.big-or-small-hold {
+	margin-left: 100px;
+}
+
+.big-or-small {
+	margin-left: -50px;
+	z-index: 50;
+}
+
+.move-card.dblock {
+	display: block;
+}
+
+.move-card {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 950px;
+	height: 392px;
+	background: url('../images/classic-playing-cards.png') no-repeat;
+	display: none;
+}
+
+.card-back {
+	width: 72px;
+	height: 97px;
+	background: url('../images/card-back.jpg') no-repeat;
+	z-index:1000;
+}
+
+.test-card {
+	width: 72px;
+	height: 97px;
+	background: url('../images/card-back.jpg') no-repeat;
+}
+
+.show-card:hover, .selected-card {
+	border: 2px solid red;
+}
+
+/*************************************************************	
+main-content												*/
+
+#sidebar {
+	width: 314px;
+	float: left;
+}
+
+/*************************************************************	
+footer        																						
+************************************************************/	
+
+#footer {
+
+}
+
+/*************************************************************	
+animations        																						
+************************************************************/	
+
+/*************************************************************	
+Cards														 */
+
+
+/* ship move ================================= */
+
+
+.transformed 
+{
+
+animation-name:ship;
+animation-duration:0.5s;
+animation-timing-function:ease-out;
+animation-delay:0s;
+animation-iteration-count:1;
+animation-direction:alternate;
+animation-play-state:running;
+
+-moz-animation-name:ship;
+-moz-animation-duration:1s;
+-moz-animation-timing-function:ease-out;
+-moz-animation-delay:0s;
+-moz-animation-iteration-count:1;
+-moz-animation-direction:alternate;
+-moz-animation-play-state:running;
+
+-webkit-animation-name:ship;
+-webkit-animation-duration:0.5s;
+-webkit-animation-timing-function:ease-out;
+-webkit-animation-delay:0s;
+-webkit-animation-iteration-count:1;
+-webkit-animation-direction:alternate;
+-webkit-animation-play-state:running;
+
+-ms-animation-name:ship;
+-ms-animation-duration:1s;
+-ms-animation-timing-function:ease-out;
+-ms-animation-delay:0s;
+-ms-animation-iteration-count:1;
+-ms-animation-direction:alternate;
+-ms-animation-play-state:running;
+
+-o-animation-name:ship;
+-o-animation-duration:1s;
+-o-animation-timing-function:ease-out;
+-o-animation-delay:0s;
+-o-animation-iteration-count:1;
+-o-animation-direction:alternate;
+-o-animation-play-state:running;
+
+}
+
+@keyframes ship 
+{
+0%   { transform: rotateY(0deg); }
+50%  { transform: rotateY(180deg);}
+100% { transform: rotateY(360deg); display: none; }
+}
+
+
+@-webkit-keyframes ship 
+{
+0%   { 	-webkit-transform: rotateY(0deg); }
+50%  {	-webkit-transform: rotateY(180deg); }
+100% { 	 -webkit-transform: rotateY(360deg); display: none; }
+}
+
+
+
+/* ship move  end ================================= */
+
+.visual
+{
+
+animation-name:visualcard;
+animation-duration:0.5s;
+animation-timing-function:ease-out;
+animation-delay:0s;
+animation-iteration-count:1;
+animation-direction:alternate;
+animation-play-state:running;
+
+-moz-animation-name:visual-card;
+-moz-animation-duration:1s;
+-moz-animation-timing-function:ease-out;
+-moz-animation-delay:0s;
+-moz-animation-iteration-count:1;
+-moz-animation-direction:alternate;
+-moz-animation-play-state:running;
+
+-webkit-animation-name:visualcard;
+-webkit-animation-duration:0.5s;
+-webkit-animation-timing-function:ease-out;
+-webkit-animation-delay:0s;
+-webkit-animation-iteration-count:1;
+-webkit-animation-direction:alternate;
+-webkit-animation-play-state:running;
+
+-ms-animation-name:visual-card;
+-ms-animation-duration:1s;
+-ms-animation-timing-function:ease-out;
+-ms-animation-delay:0s;
+-ms-animation-iteration-count:1;
+-ms-animation-direction:alternate;
+-ms-animation-play-state:running;
+
+-o-animation-name:visual-card;
+-o-animation-duration:1s;
+-o-animation-timing-function:ease-out;
+-o-animation-delay:0s;
+-o-animation-iteration-count:1;
+-o-animation-direction:alternate;
+-o-animation-play-state:running;
+
+}
+
+@keyframes visualcard 
+{
+0%   { opacity: 0.0; }
+85%   { opacity: 0.0; }
+100% { opacity: 1.0; }
+}
+
+
+@-webkit-keyframes visualcard 
+{
+0%   { 	opacity: 0.0; }
+85%   { opacity: 0.0; }
+100% { 	 opacity: 1; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

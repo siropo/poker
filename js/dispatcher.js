@@ -1,0 +1,5 @@
+function dispatcher() {
+    switch (currentGameState) {
+        
+    }
+}
